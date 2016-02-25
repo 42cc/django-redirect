@@ -1,6 +1,5 @@
 from django.contrib import admin
 from models import Redirect
-import dynamic_urls
 
 
 class RedirectAdmin(admin.ModelAdmin):
@@ -12,7 +11,6 @@ class RedirectAdmin(admin.ModelAdmin):
         # for sites that are not in debug mode reload
         # the dynamic urls, i'm not sure if this is the
         # best way though
-        reload(dynamic_urls)
         return instance
 
 admin.site.register(Redirect, RedirectAdmin)
